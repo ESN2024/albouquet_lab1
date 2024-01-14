@@ -1,0 +1,26 @@
+nios2-bsp hal C:/Users/KLD/Documents/M2/co_d/albouquet_lab1/software/bsp/ <albouquet_lab1.sopcinfo>
+
+nios2-app-generate-makefile \
+--app-dir software/app \
+--bsp-dir software/bsp \
+--elf-name exec_name.elf \
+--src-files main.c
+
+cd software/app
+make
+
+Balancer le vhdl sur la carte (programmer)
+
+make download-elf (dans le repertoire app)
+
+nios2-terminal
+
+##########################
+Le qsys une fois generer devient un simple module
+
+##########################
+Gestion des PIOs
+
+Une fois la commande "nios2-bsp hal" réalisée, un fichier system.h se crée
+dans le repertoire bsp. 
+Il contient le nom des PIOs (bases) et leur adresse associée

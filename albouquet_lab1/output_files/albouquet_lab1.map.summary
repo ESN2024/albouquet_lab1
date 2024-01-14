@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Jan 12 16:17:37 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : albouquet_lab1
+Top-level Entity Name : lab1
+Family : MAX 10
+Total logic elements : 1,851
+    Total combinational functions : 1,656
+    Dedicated logic registers : 947
+Total registers : 947
+Total pins : 15
+Total virtual pins : 0
+Total memory bits : 331,264
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
