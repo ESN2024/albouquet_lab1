@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="751d71168d5c3c0867a4"/>
+    <hash md5_digest_80b="6b6157c08d4a5598bd90"/>
   </project>
   <file_info>
     <file device="10M50DAF484C7G" path="albouquet_lab1.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="albouquet_lab1:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME albouquet_lab1 HAS_SOPCINFO 1 GENERATION_ID 1705072599"/>
+        <assignment_value text="QSYS_NAME albouquet_lab1 HAS_SOPCINFO 1 GENERATION_ID 1705311948"/>
       </assignment_values>
       <parameters/>
     </sld_info>

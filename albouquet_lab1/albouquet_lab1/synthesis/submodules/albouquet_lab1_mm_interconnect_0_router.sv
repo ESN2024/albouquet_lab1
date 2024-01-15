@@ -211,7 +211,7 @@ module albouquet_lab1_mm_interconnect_0_router
     end
 
     // ( 0x21030 .. 0x21040 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 18'h21030  && read_transaction  ) begin
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 18'h21030   ) begin
             src_channel = 6'b100000;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 5;
     end

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'albouquet_lab1'
  * SOPC Builder design path: ../../albouquet_lab1.sopcinfo
  *
- * Generated: Fri Jan 12 17:04:39 CET 2024
+ * Generated: Mon Jan 15 10:48:45 CET 2024
  */
 
 /*
@@ -296,18 +296,18 @@
 #define PIO_2_BASE 0x21030
 #define PIO_2_BIT_CLEARING_EDGE_REGISTER 0
 #define PIO_2_BIT_MODIFYING_OUTPUT_REGISTER 0
-#define PIO_2_CAPTURE 0
+#define PIO_2_CAPTURE 1
 #define PIO_2_DATA_WIDTH 1
 #define PIO_2_DO_TEST_BENCH_WIRING 0
 #define PIO_2_DRIVEN_SIM_VALUE 0
-#define PIO_2_EDGE_TYPE "NONE"
+#define PIO_2_EDGE_TYPE "ANY"
 #define PIO_2_FREQ 50000000
 #define PIO_2_HAS_IN 1
 #define PIO_2_HAS_OUT 0
 #define PIO_2_HAS_TRI 0
-#define PIO_2_IRQ -1
-#define PIO_2_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define PIO_2_IRQ_TYPE "NONE"
+#define PIO_2_IRQ 1
+#define PIO_2_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PIO_2_IRQ_TYPE "EDGE"
 #define PIO_2_NAME "/dev/pio_2"
 #define PIO_2_RESET_VALUE 0
 #define PIO_2_SPAN 16

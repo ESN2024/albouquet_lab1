@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'albouquet_lab1'
  * SOPC Builder design path: ../../albouquet_lab1.sopcinfo
  *
- * Generated: Fri Jan 12 17:04:39 CET 2024
+ * Generated: Mon Jan 15 10:18:08 CET 2024
  */
 
 /*

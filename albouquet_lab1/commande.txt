@@ -1,4 +1,4 @@
-nios2-bsp hal C:/Users/KLD/Documents/M2/co_d/albouquet_lab1/software/bsp/ <albouquet_lab1.sopcinfo>
+nios2-bsp hal software/bsp/ albouquet_lab1.sopcinfo
 
 nios2-app-generate-makefile \
 --app-dir software/app \
@@ -17,7 +17,8 @@ nios2-terminal
 
 ##########################
 Le qsys une fois generer devient un simple module
-
+ATTENTION : s'il y a des fonctions printf dans le programme
+	-> le programme a besoin du terminal pour bien fonctionner.
 ##########################
 Gestion des PIOs
 

@@ -1,5 +1,5 @@
 Flow report for albouquet_lab1
-Fri Jan 12 16:18:13 2024
+Mon Jan 15 10:47:29 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jan 12 16:18:05 2024       ;
+; Flow Status                        ; Successful - Mon Jan 15 10:47:22 2024       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; albouquet_lab1                              ;
 ; Top-level Entity Name              ; lab1                                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,776 / 49,760 ( 4 % )                      ;
-;     Total combinational functions  ; 1,663 / 49,760 ( 3 % )                      ;
-;     Dedicated logic registers      ; 939 / 49,760 ( 2 % )                        ;
-; Total registers                    ; 939                                         ;
+; Total logic elements               ; 1,800 / 49,760 ( 4 % )                      ;
+;     Total combinational functions  ; 1,685 / 49,760 ( 3 % )                      ;
+;     Dedicated logic registers      ; 947 / 49,760 ( 2 % )                        ;
+; Total registers                    ; 947                                         ;
 ; Total pins                         ; 15 / 360 ( 4 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 331,264 / 1,677,312 ( 20 % )                ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/12/2024 16:16:11 ;
+; Start date & time ; 01/15/2024 10:45:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; albouquet_lab1      ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+----------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+----------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 145170075154.170507257110160           ; --             ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 145170075154.170531191808572           ; --             ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --             ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --             ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --             ; lab1        ; Top        ;
@@ -95,11 +95,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:25     ; 1.0                     ; 4894 MB             ; 00:02:31                           ;
-; Fitter               ; 00:00:19     ; 1.2                     ; 5407 MB             ; 00:00:27                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4692 MB             ; 00:00:05                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.4                     ; 4820 MB             ; 00:00:08                           ;
-; Total                ; 00:01:55     ; --                      ; --                  ; 00:03:11                           ;
+; Analysis & Synthesis ; 00:01:33     ; 1.0                     ; 4895 MB             ; 00:02:53                           ;
+; Fitter               ; 00:00:20     ; 1.2                     ; 5410 MB             ; 00:00:28                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4689 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.4                     ; 4822 MB             ; 00:00:08                           ;
+; Total                ; 00:02:04     ; --                      ; --                  ; 00:03:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

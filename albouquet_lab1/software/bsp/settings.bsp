@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>12 janv. 2024 17:04:37</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1705075477496</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>15 janv. 2024 10:48:44</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1705312124865</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>.\</BspGeneratedLocation>
         <BspSettingsFile>software\bsp\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\albouquet_lab1.sopcinfo</SopcDesignFile>
