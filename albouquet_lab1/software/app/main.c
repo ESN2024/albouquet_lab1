@@ -7,6 +7,7 @@
 #include "unistd.h"
 
 volatile int edge_capture;
+volatile char vitesse;
 
 
 static void interrupt_handler(void* context, alt_u32 id)
@@ -23,6 +24,9 @@ static void interrupt_handler(void* context, alt_u32 id)
 	{
 		edge_capture=0;
 	}
+	vitesse=IORD_ALTERA_AVALON_PIO_DATA(PIO_1_BASE);
+
+
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_2_BASE,0);
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_2_BASE,0xF);
 	//alt_printf("interrupt");
@@ -34,6 +38,8 @@ static void interrupt_handler(void* context, alt_u32 id)
 int main() {
 
 	edge_capture=0;
+	char masque_led=0x01;
+	int vitesse_led=2000000;
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0xFF);
 
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_2_BASE,0xF);
@@ -43,19 +49,45 @@ int main() {
 	
 	while(1)
 	{
-		if(edge_capture == 0)
+		
+		if(edge_capture == 1)
 		{
-			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
-			//alt_printf("HELLO ACHRAF");
+			switch (vitesse) {
+				case 1:
+					vitesse_led=1000000;
+					break;
+				case 2:
+					vitesse_led=500000;
+					break;
+				case 4:
+					vitesse_led=200000;
+					break;
+				case 8:
+					vitesse_led=10000;
+					break;
+				default:
+					vitesse_led=2000000;
+			}
+
+			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, masque_led);
+			masque_led=masque_led << 1;
+			if (masque_led == 0x00) masque_led=0x01;
 		}
 		else
 		{
 			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
+			masque_led=0x01;
+			vitesse_led=2000000;
 		}
 
+		usleep(vitesse_led);
 	}
 	return 0;
 }
+
+
+
+
 
 /* Avec POLLING */
 /*int main() {
