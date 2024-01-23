@@ -1,4 +1,4 @@
-nios2-bsp hal software/bsp/ albouquet_lab1.sopcinfo
+nios2-bsp hal software/bsp/ nom_du_qsys.sopcinfo
 
 nios2-app-generate-makefile \
 --app-dir software/app \

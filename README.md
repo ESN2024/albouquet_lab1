@@ -16,3 +16,5 @@ La méthode sans polling utilise le gestionnaire des interruptions.
 	Il permet de gerer la fonction principale pour ecrire sur le registre des LEDs (PIO_0_BASE).
 	La fonction de gestion de l'interruption permet de gérer l'activation du chenillard et les switchs.
 
+En restant appuyé sur le bouton B8, le programme allume les leds une à une, avec la vitesse selectionnée avec les switchs.
+En lachant le bouton, le chenillard s'arrete.

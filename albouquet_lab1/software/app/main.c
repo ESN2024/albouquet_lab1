@@ -6,7 +6,7 @@
 #include "io.h"
 #include "unistd.h"
 
-volatile int edge_capture;
+volatile char edge_capture;
 volatile char vitesse;
 
 
@@ -39,7 +39,7 @@ int main() {
 
 	edge_capture=0;
 	char masque_led=0x01;
-	int vitesse_led=2000000;
+	__uint32_t vitesse_led=2000000;
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0xFF);
 
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_2_BASE,0xF);

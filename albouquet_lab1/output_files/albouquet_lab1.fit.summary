@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Jan 16 12:49:17 2024
+Fitter Status : Successful - Tue Jan 16 20:45:31 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : albouquet_lab1
 Top-level Entity Name : lab1
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 1,800 / 49,760 ( 4 % )
-    Total combinational functions : 1,685 / 49,760 ( 3 % )
+Total logic elements : 1,799 / 49,760 ( 4 % )
+    Total combinational functions : 1,683 / 49,760 ( 3 % )
     Dedicated logic registers : 947 / 49,760 ( 2 % )
 Total registers : 947
 Total pins : 15 / 360 ( 4 % )
