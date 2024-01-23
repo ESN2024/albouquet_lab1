@@ -11,14 +11,14 @@ preplace inst albouquet_lab1.nios2_gen2_0.cpu -pg 1
 preplace inst albouquet_lab1.nios2_gen2_0 -pg 1 -lvl 2 -y 100
 preplace inst albouquet_lab1.clk_0 -pg 1 -lvl 1 -y 90
 preplace inst albouquet_lab1 -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)clk_0.clk_in,(SLAVE)albouquet_lab1.clk) 1 0 1 NJ
-preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)albouquet_lab1.pio_0_external_connection,(SLAVE)pio_0.external_connection) 1 0 3 NJ 460 NJ 460 NJ
-preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)albouquet_lab1.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>albouquet_lab1</net_container>(SLAVE)jtag_uart_0.irq,(SLAVE)pio_2.irq,(MASTER)nios2_gen2_0.irq) 1 2 1 840
+preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)albouquet_lab1.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)albouquet_lab1.reset) 1 0 1 NJ
 preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)albouquet_lab1.pio_1_external_connection,(SLAVE)pio_1.external_connection) 1 0 3 NJ 240 NJ 240 NJ
-preplace netloc FAN_OUT<net_container>albouquet_lab1</net_container>(SLAVE)jtag_uart_0.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)pio_1.clk,(MASTER)clk_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)pio_2.clk,(SLAVE)pio_0.clk) 1 1 2 400 60 800
-preplace netloc INTERCONNECT<net_container>albouquet_lab1</net_container>(MASTER)nios2_gen2_0.instruction_master,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)pio_2.s1,(SLAVE)pio_0.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)onchip_memory2_0.s1,(SLAVE)pio_1.s1) 1 1 2 400 500 780
-preplace netloc FAN_OUT<net_container>albouquet_lab1</net_container>(SLAVE)pio_2.irq,(SLAVE)jtag_uart_0.irq,(MASTER)nios2_gen2_0.irq) 1 2 1 840
-preplace netloc INTERCONNECT<net_container>albouquet_lab1</net_container>(SLAVE)nios2_gen2_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)onchip_memory2_0.reset1,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)pio_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)pio_2.reset,(SLAVE)pio_1.reset) 1 1 2 380 480 820
-preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)pio_2.external_connection,(SLAVE)albouquet_lab1.pio_2_external_connection) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc INTERCONNECT<net_container>albouquet_lab1</net_container>(MASTER)nios2_gen2_0.debug_reset_request,(MASTER)clk_0.clk_reset,(SLAVE)pio_1.reset,(SLAVE)pio_2.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)pio_0.reset,(SLAVE)onchip_memory2_0.reset1) 1 1 2 380 60 800
+preplace netloc INTERCONNECT<net_container>albouquet_lab1</net_container>(SLAVE)pio_1.s1,(SLAVE)pio_2.s1,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)pio_0.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave) 1 1 2 400 480 780
+preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)pio_0.external_connection,(SLAVE)albouquet_lab1.pio_0_external_connection) 1 0 3 NJ 460 NJ 460 NJ
+preplace netloc EXPORT<net_container>albouquet_lab1</net_container>(SLAVE)albouquet_lab1.pio_2_external_connection,(SLAVE)pio_2.external_connection) 1 0 3 NJ 340 NJ 340 NJ
+preplace netloc FAN_OUT<net_container>albouquet_lab1</net_container>(SLAVE)jtag_uart_0.clk,(SLAVE)pio_0.clk,(SLAVE)pio_2.clk,(SLAVE)pio_1.clk,(SLAVE)nios2_gen2_0.clk,(MASTER)clk_0.clk,(SLAVE)onchip_memory2_0.clk1) 1 1 2 400 40 820
 levelinfo -pg 1 0 170 1050
 levelinfo -hier albouquet_lab1 180 210 540 890 1040

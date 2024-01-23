@@ -7,9 +7,9 @@ entity lab1 is
 	port (
 		clk_clk       : in std_logic ;
 		reset_reset_n : in std_logic ;  -- reset_n
-		trigger		  : in std_logic ;
-		speed			  : in std_logic_vector(3 downto 0);
-		leds			  : out std_logic_vector(7 downto 0)
+		trigger		  : in std_logic ; -- le bouton d'activation du chenillard
+		speed			  : in std_logic_vector(3 downto 0); -- les switchs pour gérer la vitesse
+		leds			  : out std_logic_vector(7 downto 0) -- la serie de leds à allumer
 	);
 end entity lab1;
 

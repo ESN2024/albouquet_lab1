@@ -6,15 +6,14 @@
 #include "io.h"
 #include "unistd.h"
 
-volatile char edge_capture;
-volatile char vitesse;
+#define vitesse_base 1000000
 
+volatile char edge_capture;
+volatile __uint32_t vitesse_led;
 
 static void interrupt_handler(void* context, alt_u32 id)
 {
-	//volatile int* edge_capture_ptr=(volatile int*) context;
-	//*edge_capture_ptr=IORD_ALTERA_AVALON_PIO_EDGE_CAP(PIO_2_BASE);
-	
+
 
 	if (edge_capture == 0)
 	{
@@ -24,12 +23,16 @@ static void interrupt_handler(void* context, alt_u32 id)
 	{
 		edge_capture=0;
 	}
-	vitesse=IORD_ALTERA_AVALON_PIO_DATA(PIO_1_BASE);
 
+	// Recupération de l'état des switch
+	char etats_switch=IORD_ALTERA_AVALON_PIO_DATA(PIO_1_BASE);
+	
+	// Modication de la vitesse du chenillard
+	if ( etats_switch != 0x0) vitesse_led/=etats_switch;
 
+	// Replacer l'état de l'interruption par defaut
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_2_BASE,0);
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_2_BASE,0xF);
-	//alt_printf("interrupt");
 }
 
 
@@ -39,12 +42,16 @@ int main() {
 
 	edge_capture=0;
 	char masque_led=0x01;
-	__uint32_t vitesse_led=2000000;
-	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0xFF);
+	vitesse_led=vitesse_base;
 
+	// Les leds sont tout d'abord placé à l'état éteint.
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
+
+	// Activation de l'interruption sur la PIO du bouton (PIO_2_BASE)
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PIO_2_BASE,0xF);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PIO_2_BASE,0);
 
+	// Lie l'interruption du bouton à la fonction interrupt_handler
 	alt_irq_register(PIO_2_IRQ, edge_capture, interrupt_handler);
 	
 	while(1)
@@ -52,59 +59,20 @@ int main() {
 		
 		if(edge_capture == 1)
 		{
-			switch (vitesse) {
-				case 1:
-					vitesse_led=1000000;
-					break;
-				case 2:
-					vitesse_led=500000;
-					break;
-				case 4:
-					vitesse_led=200000;
-					break;
-				case 8:
-					vitesse_led=10000;
-					break;
-				default:
-					vitesse_led=2000000;
-			}
-
 			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, masque_led);
 			masque_led=masque_led << 1;
+
+			// Si le décallage arrive à la fin (plus de led allumée), retour au debut
 			if (masque_led == 0x00) masque_led=0x01;
 		}
 		else
 		{
 			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
 			masque_led=0x01;
-			vitesse_led=2000000;
+			vitesse_led=vitesse_base;
 		}
 
 		usleep(vitesse_led);
 	}
 	return 0;
 }
-
-
-
-
-
-/* Avec POLLING */
-/*int main() {
-
-   	//alt_printf("Hello, World!");
-	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
-
-	while(1)
-	{
-		if (IORD_ALTERA_AVALON_PIO_DATA(PIO_2_BASE) == 0)
-		{
-			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0xFF);
-		}
-		else
-		{
-			IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE, 0x00);
-		}
-	}
-	return 0;
-}*/
